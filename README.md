@@ -15,7 +15,7 @@
 | POST /api/total | { "items": ["1"] }      | { "total": 7.99 }   |
 | POST /api/total | { "items": ["2", "3"] } | { "total": 224.98 } |
 
-- The above example takes in a list of strings, however, feel free to use another solution if you'd like.
+- The above example takes in a list of strings, however, feel free to structure your requests in any way you'd like.
 
 - Think about edge cases and how you would handle them e.g. an empty list, null values, invalid items etc.
 
