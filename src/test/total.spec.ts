@@ -3,14 +3,24 @@ import { app, server } from "../index";
 
 describe("POST /api/total", () => {
   it("should return the correct sum when given a valid input", async () => {
-    // TODO: Finish implementing this test
-    // You can find documentation for the supertest library here: https://github.com/ladjs/supertest/tree/master
-    // Hint: You can chain the .send({}) and .expect() functions onto the below
+    const response = await request(app)
+      .post("/api/total")
+      .send({ items: ["1", "2"] })
+      .expect(200);
 
-    const response = await request(app).post("/api/total");
+    expect(response.body.total).toEqual(32.98);
   });
 
-  // TODO: Think about other test cases you might need
+  it("should return an error when given an empty array", async () => {
+    await request(app).post("/api/total").send({ items: [] }).expect(400);
+  });
+
+  it("should return an error when given an invalid item", async () => {
+    await request(app)
+      .post("/api/total")
+      .send({ items: ["7"] })
+      .expect(400);
+  });
 });
 
 afterAll(() => {

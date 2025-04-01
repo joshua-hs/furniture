@@ -4,7 +4,7 @@
 
 - A client has asked you to build a checkout system for a shop which sells home furniture.
 
-- You can find the list of goods and their prices in `/src/products.json`.
+- You can find the list of products and their prices in `/src/products.json`.
 
 - Your task is to create an API endpoint that can take in item `id`s and return the total cost. The endpoint should accept a POST request.
 
