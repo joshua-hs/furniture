@@ -1,3 +1,6 @@
+// Ensures jest runs on a random port to avoid conflicts
+process.env.PORT = "0";
+
 import request from "supertest";
 import { app, server } from "../index";
 
